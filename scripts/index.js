@@ -9,3 +9,22 @@ document.addEventListener('scroll', function () {
         document.getElementById('navbar').style.backgroundColor = 'transparent';
     }
 });
+
+// nav toggle menu script
+const toggleBar = document.querySelector('.toggle-bar')
+const toggleBarIcon = document.querySelector('.toggle-bar i')
+const dropDownMenu = document.querySelector('.dropdown-menu')
+
+toggleBar.onclick = function () {
+    dropDownMenu.classList.toggle('open')
+    const isOpen = dropDownMenu.classList.contains('open')
+
+    if (isOpen) {
+        toggleBarIcon.classList.remove('fa-bars');
+        toggleBarIcon.classList.add('fa-xmark');
+    } else {
+        toggleBarIcon.classList.remove('fa-xmark');
+        toggleBarIcon.classList.add('fa-bars');
+    }
+}
+
